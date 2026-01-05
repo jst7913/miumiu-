@@ -5,6 +5,7 @@
 
 #include "GridWorld.h"
 #include "Objects.h"
+#include "SelfDrivingCar.h"
 
 using namespace std;
 
@@ -99,6 +100,15 @@ void GridWorld::generateWorld() {
         objects.push_back(new Bike(i + 1, p.getX(), p.getY(), d));
     }
 
+    //start veh
+    if (startveh.getX() >= 0 && startveh.getY() >= 0) {
+        SelfDrivingCar* autoCar = new SelfDrivingCar(7,
+            startveh.getX(), startveh.getY(),
+            targetveh.getX(), targetveh.getY()
+        );
+
+        objects.push_back(autoCar);
+    }
 }
 
 // ----- Display world -----
