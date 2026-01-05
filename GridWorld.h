@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "Objects.h"
+#include "SelfDrivingCar.h"
 
 class GridWorld {
 private:
@@ -17,6 +18,9 @@ private:
     int numTrafficLights;
     int simulationTicks;
     int minConfidenceThreshold;
+
+    Position startveh;
+    Position targetveh;
 
     std::vector<WorldObject*> objects;
 
